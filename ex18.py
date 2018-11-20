@@ -1,49 +1,27 @@
-#This is an import. The argv is the "argument variable and holds the arguments you pass to your Python script when you run it.
-from sys import argv
-# this line unpacks argv. it gets assigned to 2 variables.
-script, input_file = argv
-#This creates the function print_all with argument f.
-def print_all(f):
-    print(f.read())
+#This one is like your scripts with argv
+# We tell Python we want to make a function using def for "define"
+# print_two is the name of the function
+# args is a lot like our argv parameter but for functions
+def print_two(*args) :
+    # * That tells Python to take all the arguments to the function and then put them in args as a list.
+    # It’s like argv that you’ve been using, but for functions. It’s not normally used too often unless 
+    # specifically needed.
+    arg1, arg2 = args
+    print ("arg1: %r, arg2: %r" %(arg1, arg2))
 
-# seek takes you to specific line in a file def rewind(f): f.seek(0)
-def rewind(f):
-    f.seek(0)
-# What it does here in your code is move the current position in the file to the start (index 0).
-# The use of this in the code is that on the previous lines, the entire file was just read, so the position is at the very end of the file.
-# This means that for future things (such as calling f.readline()), you will be in the wrong place.
-# Whereas you want to be at the beginning - hence the .seek(0).
+# ok, that *args is actually pointless, we can just do This
+def print_two_again(arg1, arg2):
+    print ("arg1: %r, arg2: %r" %(arg1, arg2))
 
-# readline()reads one entire line from the file.
-# fileObject.readline( size ); size − This is the number of bytes to be read from the file.
-def print_a_line(line_count, f):
-    print (line_count, f.readline())
+#this just takes one argument
+def print_one(arg1) :
+    print("arg1: %r" % arg1)
 
-current_file = open(input_file)
+#this one takes no arguments
+def print_none():
+    print ("I got nothing'.")
 
-print ("First let's print the whole file:\n")
-
-print_all(current_file)
-#print (current_file.read())
-
-print("Now let's rewind, kind of like a tape.")
-
-rewind(current_file)
-
-print, ("Let's print three lines:")
-
-# The readline() function returns the \n that’s in the file at the end of that line
-current_line = 1
-print_a_line(current_line, current_file)
-
-current_line += 1
-#current_line = current_line + 1
-print_a_line(current_line, current_file)
-
-current_line += 1
-print_a_line(current_line, current_file)
-
-#NOTE: += this is kind of like a contraction for the two operations = and +. That means x = x + y is the same as x += y.
-
-#NOTE: Inside readline() is code that scans each byte of the file until it finds a \n character, then stops reading the file to return what it found so far.
-# The file f is responsible for maintaining the current position in the file after each readline() call, so that it will keep reading each line.
+print_two ("Zed", "Shaw")
+print_two_again("Zed", "Shaw")
+print_one("First!")
+print_none()

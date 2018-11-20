@@ -1,20 +1,13 @@
-tabby_cat =("\tI'm tabbed in.")
-persian_cat = ("I'm split\non a line.")
-backlash_cat = ("I'm \\a \\ cat")
+formatter = ("%r %r %r %r")
 
-fat_cat = ("""
-I'll do a list:
-\t* Cat food
-\v* Fishies
-\b* Catnip\n\t* Grass
-""")
-
-print (tabby_cat)
-print (persian_cat)
-print (backlash_cat)
-print (fat_cat)
-
-marialena = ("\'My name is Marialena.")
-age_m = ("I am %d years old." %24)
-print (marialena)
-print (age_m)
+print (formatter % (1, 2, 3, 4))
+print (formatter % ("one", "two", "three", "four"))
+print (formatter % (True, False, False, True)) # I dont need "" here.
+#Python recognizes True and False as keywords representing the concept of true and false.
+# If you put quotes around them then they are turned into strings and won't work.
+print (formatter % (formatter, formatter, formatter, formatter))
+print (formatter % (
+"I had this thing.",
+"That you could type up right.",
+"But it didn't sing.",
+"So I said goodnight."))

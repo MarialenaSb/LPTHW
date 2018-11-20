@@ -1,20 +1,23 @@
-print ("Mary had a little lamb.")
-print ("Its fleece was white as %s." % 'snow')
-print ("And everywhere that Mary went.")
-print ("." * 10) # this will insert 10 dots like this ..........
+# in this exercise I will learn how to make strings that have variables embedded in them.
+#You embed variables inside a string by using specialized format sequences and then putting the variables at the end with a special syntax that tells Python,
+# "Hey, this is a format string. Put these variables in there."
 
-end1 = "C"
-end2 = "h"
-end3 = "e"
-end4 = "e"
-end5 = "s"
-end6 = "e"
-end7 = "B"
-end8 = "u"
-end9 = "r"
-end10 = "g"
-end11 = "e"
-end12 = "r"
+name = 'Marialena Sbrini'
+age = 24
+height = 65
+eyes = 'Brown'
+teeth ='white'
+hair = 'Brown'
+weight = 132
+centimeters = height * 2.54
+kilos = weight / 2.2
 
-print (end1 + end2 + end3 + end4 + end5 + end6,) # if I remove the , I will get the same result
-print (end7 + end8 + end9 + end10 + end11 + end12)
+print ("Let's talk about %s." % name)
+print ("She's %d inches tall" % height)
+print ("Actually that's not too tall.")
+print ("She's got %s eyes and %s hair." %(eyes, hair))
+print ("Her teeth are usually %s depending on the coffee." % teeth)
+print ("%r inches equals %r centimeters." %(height, centimeters))
+print (" %r pounds equals %r kilos." %(weight, kilos))
+
+print ("If I add %d, %d and %d I get %d." %( age, height,  age, 165 + 48))

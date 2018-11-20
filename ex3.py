@@ -1,23 +1,28 @@
-# in this exercise I will learn how to make strings that have variables embedded in them.
-#You embed variables inside a string by using specialized format sequences and then putting the variables at the end with a special syntax that tells Python,
-# "Hey, this is a format string. Put these variables in there."
+print ("Hello World")
+print ("Hello again")
+print ("I like typing this.")
+print ("This is fun")
+print (" Yay! print")
+# there is a difference between python 2 and 3. here I need parentheses tooself.
+print ("I could have code like this.")
+# I can also use a comment to "disable" or comment out a piece of code:
+# print ("This wont run")
+print ("This will run.")
 
-name = 'Marialena Sbrini'
-age = 24
-height = 65
-eyes = 'Brown'
-teeth ='white'
-hair = 'Brown'
-weight = 132
-centimeters = height * 2.54
-kilos = weight / 2.2
+print ("I will now count my pens")
 
-print ("Let's talk about %s." % name)
-print ("She's %d inches tall" % height)
-print ("Actually that's not too tall.")
-print ("She's got %s eyes and %s hair." %(eyes, hair))
-print ("Her teeth are usually %s depending on the coffee." % teeth)
-print ("%r inches equals %r centimeters." %(height, centimeters))
-print (" %r pounds equals %r kilos." %(weight, kilos))
+print ("Blue", 25 + 30/6)
+print ("Red", 100 - 25 * 3 % 4)
+print ("Now I will count the pencils")
+print (3 + 2 + 1 - 5 + 4 % 2 - 1 / 4 + 6)
+print ("It is true that 3 + 2 < 5 - 7?")
+print (3 + 2 < 5 - 7)
 
-print ("If I add %d, %d and %d I get %d." %( age, height,  age, 165 + 48))
+print ("What is 3 + 2?", 3 + 2)
+print ("What is 5-7?", 5 - 7)
+print ("Oh that's why it's false")
+print ("How about some more.")
+
+print ("Is it greater?", 5 > -2)
+print ("Is it greater or equal?", 5>=-2)
+print ("Is it less or equal?", 5<= -2)

@@ -1,30 +1,23 @@
-# We’re going to actually write a Python script to copy one file to another.
-
 from sys import argv
-from os.path import exists
-# We import the command named exists. This returns True if a file exists, based on its name in a string as an argument. It returns False if not.
 
-script, from_file, to_file=argv
-# from_file is the argv[1]
+script, filename = argv
+#unpack argv. it gets assigned to 2 variables: script and filename
 
-print("Copying from %s to %s" %(from_file, to_file))
+txt = open(filename)
+#open: it takes a parameter and returns a value you can set to your own variable.If I put ex13.txt when I'm going to run the program then the filename refers to this.
 
-in_file = open(from_file)
-indata = in_file.read()
+print ("Here is your file %r: " % filename)
+#Here is your file ex13.txt
+print (txt.read())
+# here we call a function on txt. We give a file a command by using the . (dot or period), the name of the command, and parameters. This will appear the text from the ex13.txt
 
-print ("The input file is %d bytes long" %len(indata))
+print ("Type the filename again: ")
+file_again = input(">")
 
-print ("Does the output file exist? %r" % exists(to_file))
-print ("Ready, hit RETURN to continue, CTRL-C to abort.")
-input()
+txt_again = open(file_again)
+# it defines as the variable txt_again the answer of the user
+print (txt_again.read())
+#It appears the text again if the name is right
 
-out_file = open(to_file,'w')
-out_file.write(indata)
-
-print ("Alrigth, all done.")
-
-out_file.close()
-in_file.close()
-
-#I could have the same output with the following code:
-# from sys import argv; open(argv[2],'w').write(open(argv[1]).read())
+txt_again.close()
+txt.close()
